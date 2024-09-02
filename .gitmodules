@@ -1,0 +1,3 @@
+[submodule "patcher/ext/minhook"]
+	path = patcher/ext/minhook
+	url = https://github.com/TsudaKageyu/minhook
