@@ -32,9 +32,9 @@ void entry() {
     std::cout << "[+] Initialized MinHook\n";
 
     moduleBase = reinterpret_cast<uintptr_t>(GetModuleHandleA("Velocity.exe"));
-    MH_CreateHook(reinterpret_cast<LPVOID>(moduleBase + 0x6A480), set_response, reinterpret_cast<void **>(&init_orig));
-    MH_CreateHook(reinterpret_cast<LPVOID>(moduleBase + 0x6C2D0), one_arg_fn, reinterpret_cast<void **>(&login_orig));
-    MH_CreateHook(reinterpret_cast<LPVOID>(moduleBase + 0x6D790), one_arg_fn, reinterpret_cast<void **>(&log_msg_orig));
+    MH_CreateHook(reinterpret_cast<LPVOID>(moduleBase + 0x6A480), set_response, reinterpret_cast<void**>(&init_orig));
+    MH_CreateHook(reinterpret_cast<LPVOID>(moduleBase + 0x6C2D0), one_arg_fn, reinterpret_cast<void**>(&login_orig));
+    MH_CreateHook(reinterpret_cast<LPVOID>(moduleBase + 0x6D790), one_arg_fn, reinterpret_cast<void**>(&log_msg_orig));
 
     if (MH_EnableHook(MH_ALL_HOOKS) != MH_OK) {
         std::cout << "[-] Failed to enable hooks\n";
